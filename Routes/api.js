@@ -1,23 +1,23 @@
-const express = require('express');
+import express from 'express';
+import GPTModelController from '../Controllers/GPTModelController.js';
+import { datasetRequest } from '../Requests/DatasetValidation.js';
+
 const router = express.Router();
-const authenticate = require('./Middleware/authenticate');
 
 /**
  * -------------------------------
  * POST --> DATASETS API ROUTE
  * -------------------------------
  */
-router.post('/datasets', authenticate, (req, res) => {
-  
-});
+router.post('/datasets', datasetRequest, GPTModelController.store);
 
 /**
  * -------------------------------
  * GET --> RECOMMENDATIONS ROUTES
  * -------------------------------
  */
-router.get('/recommendations', authenticate, (req, res) => {
+router.get('/recommendations', (req, res) => {
   
 });
 
-module.exports = router;
+export default router;

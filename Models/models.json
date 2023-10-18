@@ -1,0 +1,44 @@
+[
+  {
+    "trainingFile": {},
+    "trainingFileId": "file-6q8JlWSF8r1D5msp9CqErqgk",
+    "modelId": "ftjob-iQD3Gn69htlWgyjEMXwnjKgB",
+    "model": "gpt-3.5-turbo-0613",
+    "date": "2023-10-18-16:23:47"
+  },
+  {
+    "trainingFile": {},
+    "trainingFileId": "file-JfztVatMjBSLTNAq6lsYHHGv",
+    "modelId": "ftjob-ItxFz4LJEC03X9VC399igoqn",
+    "model": "gpt-3.5-turbo-0613",
+    "date": "2023-10-18-16:24:34"
+  },
+  {
+    "trainingFile": "2023-10-18-16:24:52_job_dataset",
+    "trainingFileId": "file-R4qoedUJwONrB42VckuZTfls",
+    "modelId": "ftjob-Uk14FZC5both0eVWezk6GoEc",
+    "model": "gpt-3.5-turbo-0613",
+    "date": "2023-10-18-16:24:55"
+  },
+  {
+    "trainingFile": "jobs_training_dataset",
+    "trainingFileId": "file-8VeHbaSwCPXmalXAfLLKQ8Oi",
+    "modelId": "ftjob-GywLkvVZSzNXkoaFQwkVuSsO",
+    "model": "gpt-3.5-turbo-0613",
+    "date": "2023-10-18-16:32:10"
+  },
+  {
+    "trainingFile": "jobs_training_dataset",
+    "trainingFileId": "file-fF9v4QV18H5aUkidtRWNwsVe",
+    "modelId": "ftjob-GKnMKFYWDQ3IBQX01rzdnMJd",
+    "model": "gpt-3.5-turbo-0613",
+    "date": "2023-10-18-16:34:01"
+  },
+  {
+    "trainingFile": "jobs_training_dataset",
+    "trainingFileId": "file-57Ki4IDGRyBM17IpxWBOYZoz",
+    "modelId": "ftjob-omwuURj89BxzKEOQx4Xn3CLl",
+    "model": "gpt-3.5-turbo-0613",
+    "date": "2023-10-18-16:35:05"
+  }
+]
