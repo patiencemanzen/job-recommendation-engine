@@ -16,8 +16,6 @@ router.post('/datasets', datasetRequest, GPTModelController.store);
  * GET --> RECOMMENDATIONS ROUTES
  * -------------------------------
  */
-router.get('/recommendations', (req, res) => {
-  
-});
+router.post('/recommendations', GPTModelController.recommendations);
 
 export default router;

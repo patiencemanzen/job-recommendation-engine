@@ -1,10 +1,14 @@
 import fs from 'fs';
 import path from 'path';
-import datetimeService from '../Services/DatetimeService.js';
 
 class DatasetService {
+    /**
+     * Create dataset jsonl file for training model purpose
+     * 
+     * @param {Object} jobData 
+     * @returns 
+     */
     createFile(jobData) {
-        const currentDate = datetimeService.formatted();
         const datasetDirectory = 'Models';
 
         if (!fs.existsSync(datasetDirectory)) {
@@ -16,11 +20,13 @@ class DatasetService {
         const writeStream = fs.createWriteStream(jsonlFilePath, { flags: 'a' });
 
         jobData.forEach(job => {
+            const prompt = "I want you to act as good assistant and as a job recommendation engine, and guess what kind of job a user might be interested in based on their qualifications, preferences, and experience, Given a jobs list, provide the following fields in a JSON dict, where applicable: title, location, and bio";
+            
             const jsonLine = JSON.stringify({
                 messages: [
-                    { role: "system",content: "Given a jobs list, provide the following fields in a JSON dict, where applicable: title, description"},
-                    { role: "user", content: `${job.company} want to hire ${job.title}, with ${job.experience} located ${job.location}`},
-                    { role: "assistant", content: `title: ${job.name}, description: ${job.description}, company: ${job.company}, location: ${job.location}, experience: ${job.experience}`}
+                    { role: "system",content: prompt },
+                    { role: "user", content: `${job.company} want to hire ${job.title}, with ${job.experience} located ${job.location}` },
+                    { role: "assistant", content: `title: ${job.name}, description: ${job.description}, company: ${job.company}, location: ${job.location}, experience: ${job.experience}` }
                 ],
             });
         
@@ -28,6 +34,7 @@ class DatasetService {
         });
 
         writeStream.end();
+        
         return datasetID;
     }
 }

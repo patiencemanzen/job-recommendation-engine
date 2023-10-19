@@ -40,5 +40,13 @@
     "modelId": "ftjob-omwuURj89BxzKEOQx4Xn3CLl",
     "model": "gpt-3.5-turbo-0613",
     "date": "2023-10-18-16:35:05"
+  },
+  {
+    "trainingFile": "jobs_training_dataset",
+    "trainingFileId": "file-YUXMvDPB4I5gDLgruFbhjI9Q",
+    "modelId": "ftjob-DRYXgBIs010KhzeUCcmxA4Kq",
+    "model": "gpt-3.5-turbo-0613",
+    "modelToken": "ft:gpt-3.5-turbo-0613:patienceman::8BIAO5MK",
+    "date": "2023-10-19-09:50:18"
   }
 ]
