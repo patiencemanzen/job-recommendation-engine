@@ -35,6 +35,8 @@ export default new class JobRecommendService {
                         * Location: ${user.location}
                         * Bio: ${user.description}`},
                 ],
+                temperature: 0,
+                max_tokens: 200,
             });
     
             return completion.choices[0].message.content;
