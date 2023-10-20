@@ -1,7 +1,7 @@
 {
   "name": "job-recommendation-engine",
   "version": "1.0.0",
-  "description": "",
+  "description": "job recommendation engine powered by open-ai",
   "main": "app.js",
   "type": "module",
 

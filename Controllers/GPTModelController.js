@@ -10,6 +10,7 @@ export default new class GPTModelController {
      */
     store(req, res) {
         const datasetfile = GPTModelService.registerDataset(req.body.datasets);
+        
         GPTModelService.finetuneModel(datasetfile);
 
         res.json({ message: "datasets created" });

@@ -26,7 +26,6 @@ export default new class GPTModelService {
         const __filename = fileURLToPath(import.meta.url);
         const __dirname = path.dirname(__filename);
         const filePath = path.join(__dirname, '..', 'Models', `jobs_training_dataset.jsonl`);
-
         const resolvedTrainingFileId = await training_file_id;
 
         const openai = new OpenAI({ apiKey: process.env.OPENAI_APP_KEY });
@@ -36,7 +35,7 @@ export default new class GPTModelService {
         });
 
         const finetunefilelId = finetunefile.id;
-        console.log("Finetune Dataset Uploded");
+        console.log("Finetune Dataset Uploaded");
 
         const fineTune = await openai.fineTuning.jobs.create({ 
             training_file: finetunefilelId, 
