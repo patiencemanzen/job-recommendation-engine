@@ -1,6 +1,7 @@
 # Job Recommendation Engine powered by OpenAI
 
-![OpenAI](https://github.com/patiencemanzen/job-recommendation-engine/assets/55847682/12fe327b-f295-4600-bf7b-eaf4efe2cc7e)
+<img width="569" alt="Screenshot 2023-10-20 at 10 34 07 AM" src="https://github.com/patiencemanzen/job-recommendation-engine/assets/55847682/50d7aebd-52b0-4864-a1bb-b498cfb45855">
+
 
 ## Table of Contents
 
