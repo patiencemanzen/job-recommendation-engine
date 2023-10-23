@@ -1,0 +1,7 @@
+Demo:
+    1. Project and Modules setup
+    2. Node.js Routing and Valition
+    3. GPT Model Controller and register a custom dataset
+    4. Train the model with stored datasets
+    5. Test our fine-tuned Openai model
+    6. Final remarks, Setup and sharing Github Repo

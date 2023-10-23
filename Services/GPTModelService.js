@@ -1,8 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import OpenAI, { toFile } from 'openai';
+import OpenAI from 'openai';
 import DatetimeService from '../Services/DatetimeService.js';
-import DatasetService from '../Services/DatasetService.js';
 import modelDataStorage from '../Models/ModelDataStorage.js';
 import { fileURLToPath } from 'url';
 
@@ -13,8 +12,34 @@ export default new class GPTModelService {
      * @param {Array} datasets
      * @returns
      */
-    async registerDataset(datasets) {
-        return DatasetService.createFile(datasets);
+    async registerDataset(jobData) {
+        const datasetDirectory = 'Models';
+
+        if (!fs.existsSync(datasetDirectory)) {
+            fs.mkdirSync(datasetDirectory, { recursive: true });
+        }
+
+        const datasetID = `jobs_training_dataset`;
+        const jsonlFilePath = path.join(datasetDirectory, `${datasetID}.jsonl`);
+        const writeStream = fs.createWriteStream(jsonlFilePath, { flags: 'a' });
+
+        jobData.forEach(job => {
+            const prompt = "I want you to act as good assistant and as a job recommendation engine, and guess what kind of job a user might be interested in based on their qualifications, preferences, and experience, Given a jobs list, provide the following fields in a JSON dict, where applicable: title, location, and bio";
+            
+            const jsonLine = JSON.stringify({
+                messages: [
+                    { role: "system",content: prompt },
+                    { role: "user", content: `${job.company} want to hire ${job.title}, with ${job.experience} located ${job.location}` },
+                    { role: "assistant", content: `title: ${job.name}, description: ${job.description}, company: ${job.company}, location: ${job.location}, experience: ${job.experience}` }
+                ],
+            });
+        
+            writeStream.write(jsonLine + '\n');
+        });
+
+        writeStream.end();
+        
+        return datasetID;
     }
 
     /**
@@ -68,14 +93,12 @@ export default new class GPTModelService {
         }
 
         if (status === 'succeeded') {
-            const fineTunedModelId = jobInfo.data.model_id;
-
             modelDataStorage.create({
                 trainingFile: resolvedTrainingFileId,
-                trainingFileId: finetunefilelId,
-                jobId: fineTune.id,
+                trainingFileId: trainingFileId,
+                jobId: jobInfo.id,
                 model: fineTune.model,
-                modelToken: fineTunedModelId,
+                modelToken: fineTune.model,
                 date: DatetimeService.formatted(),
             });
     

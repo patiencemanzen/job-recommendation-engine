@@ -13,7 +13,7 @@ export default new class GPTModelController {
         
         GPTModelService.finetuneModel(datasetfile);
 
-        res.json({ message: "datasets created" });
+        res.json({ message: "GPT model created and uploaded" });
     }
 
     /**
